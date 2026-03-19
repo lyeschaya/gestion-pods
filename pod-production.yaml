@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-production
+  namespace: gestion-pods
+spec:
+  nodeSelector:
+    environment: production
+  containers:
+    - name: apache
+      image: registry.access.redhat.com/ubi8/httpd-24

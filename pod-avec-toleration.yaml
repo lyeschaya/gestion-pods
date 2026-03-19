@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-avec-toleration
+  namespace: gestion-pods
+spec:
+  tolerations:
+    - key: "dedicated"
+      operator: "Equal"
+      value: "critical"
+      effect: "NoSchedule"
+  containers:
+    - name: apache
+      image: registry.access.redhat.com/ubi8/httpd-24
